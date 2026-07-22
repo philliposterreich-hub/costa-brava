@@ -505,87 +505,88 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   .hero-scroll{ display:none; }
 }
 /* =========================================================
-   PREMIUM SERVICE CARD PROTOTYPE (HVAC)
+   PREMIUM SERVICE CARD PROTOTYPE (HVAC) - REVISED
    ========================================================= */
 .service-image-card {
   position: relative !important;
   overflow: hidden !important;
-  padding: 0 !important;
-  border-radius: var(--radius) !important;
-  border: 1px solid var(--divider) !important;
-  aspect-ratio: 4/5 !important;
-  background: var(--navy) !important;
+  padding: 0 !important; /* Removes default padding so image hits the edges */
+  min-height: 380px; /* Replaced aspect-ratio with a fixed min-height */
+  border-radius: var(--radius);
+  border: 1px solid var(--divider);
+  background: var(--navy);
   display: flex !important;
   flex-direction: column !important;
   justify-content: flex-end !important;
-  transition: transform .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease) !important;
+  transition: transform .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
 }
 
 .service-image-card .card-bg-media {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  z-index: 1 !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .service-image-card .card-bg-media img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  transition: transform 0.6s var(--ease) !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
 }
 
 .service-glass-panel {
-  position: relative !important;
-  z-index: 2 !important;
-  background: rgba(11, 31, 58, 0.78) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-top-left-radius: 12px !important;
-  border-top-right-radius: 12px !important;
-  padding: 26px 22px !important;
-  color: #FFFFFF !important;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2) !important;
-  transition: background 0.3s var(--ease) !important;
+  position: relative;
+  z-index: 2;
+  background: rgba(11, 31, 58, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 24px;
+  color: #FFFFFF;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s var(--ease);
 }
 
 .service-glass-panel .icon {
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: 4px !important;
-  background: rgba(245, 130, 32, 0.15) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-bottom: 14px !important;
-  color: var(--orange) !important;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  background: rgba(245, 130, 32, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  color: var(--orange, #F58220); /* Fallback orange just in case */
 }
 
 .service-glass-panel h3 {
-  color: #FFFFFF !important;
-  font-size: 18px !important;
-  margin-bottom: 8px !important;
+  color: #FFFFFF;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 .service-glass-panel p {
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-size: 13.5px !important;
-  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13.5px;
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* Hover States */
 .service-image-card:hover {
-  transform: translateY(-6px) !important;
-  border-color: var(--orange) !important;
-  box-shadow: 0 20px 40px -20px rgba(11, 31, 58, 0.4) !important;
+  transform: translateY(-6px);
+  border-color: var(--orange, #F58220);
+  box-shadow: 0 20px 40px -20px rgba(11, 31, 58, 0.4);
 }
 
 .service-image-card:hover .card-bg-media img {
-  transform: scale(1.05) !important;
+  transform: scale(1.05);
 }
 
 .service-image-card:hover .service-glass-panel {
-  background: rgba(18, 42, 78, 0.85) !important;
+  background: rgba(18, 42, 78, 0.95);
 }

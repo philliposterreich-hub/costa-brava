@@ -360,6 +360,43 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
 .logo-track .logo-item:hover{ opacity:1; color: var(--orange); }
 .logo-track .logo-item .dot{ width:6px; height:6px; background: var(--orange); border-radius:50%; }
 
+/* ---------- Client Logo Marquee ---------- */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+  white-space: nowrap;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  animation: scroll-left 25s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+.client-logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+}
+.client-logo {
+  max-width: 100%;
+  height: auto;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
 /* ---------- CTA banner ---------- */
 .cta-banner{
   position:relative; background: var(--navy); color:#fff; padding: 100px 0; text-align:center; overflow:hidden;

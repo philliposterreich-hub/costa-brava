@@ -294,6 +294,7 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
 
 /* ---------- Media Card (premium image-background service card) ---------- */
 .card-media{
+  position: relative;
   padding: 0;
   overflow: hidden;
   aspect-ratio: 4 / 5;
@@ -303,21 +304,19 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   box-shadow: 0 30px 60px -22px rgba(11,31,58,0.45);
   border-color: var(--orange);
 }
-.card-media-bg{
-  position: absolute; inset: 0;
-  overflow: hidden;
-  border-radius: var(--radius);
-}
-.card-media-bg img{
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center 35%;
+.card-media-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
   transition: transform .7s var(--ease);
 }
-.card-media:hover .card-media-bg img{
+.card-media:hover .card-media-img{
   transform: scale(1.05);
 }
 
-/* floating glass panel — does not span full width/height, image stays visible on all sides */
 .card-media-panel{
   position: absolute;
   left: 20px; right: 20px; bottom: 20px;
@@ -345,34 +344,12 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   margin-bottom: 12px;
 }
 .card-media-panel .icon svg{ width: 21px; height: 21px; }
-.card-media-panel h3{
-  color: #fff; margin-bottom: 6px; font-size: 16.5px;
-}
-.card-media-panel p{
-  color: rgba(255,255,255,0.75); font-size: 13px; margin: 0; line-height: 1.5;
-}
+.card-media-panel h3{ color: #fff; margin-bottom: 6px; font-size: 16.5px; }
+.card-media-panel p{ color: rgba(255,255,255,0.75); font-size: 13px; margin: 0; line-height: 1.5; }
 
 @media (max-width: 620px){
   .card-media-panel{ max-width: 82%; }
 }
-
-/* ---------- Stats ---------- */
-.stats-band{
-  background: var(--navy); color:#fff; padding: 70px 0;
-  position: relative; overflow:hidden;
-}
-.stats-band::before{
-  content:""; position:absolute; inset:0; opacity:.06;
-  background-image:
-    linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
-  background-size: 42px 42px;
-}
-.stats-grid{ display:grid; grid-template-columns: repeat(5,1fr); gap: 20px; position:relative; z-index:1; }
-.stat{ text-align:left; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 20px; }
-.stat .num{ font-family: var(--font-head); font-size: clamp(32px,3.6vw,46px); font-weight:600; color:#fff; display:flex; align-items:baseline; gap:2px;}
-.stat .num .suffix{ color: var(--orange); }
-.stat .label{ font-size: 13.5px; color: rgba(255,255,255,0.65); margin-top:6px; text-transform:uppercase; letter-spacing:.06em; }
 
 /* ---------- Advantages list ---------- */
 .adv-list{ display:grid; grid-template-columns: repeat(2,1fr); gap: 20px 40px; }

@@ -292,6 +292,70 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
 .card ul li{ font-size: 14px; color: var(--text-soft); padding: 6px 0; border-top: 1px dashed var(--divider); }
 .card ul li:first-child{ border-top:none; }
 
+/* ---------- Media Card (premium image-background service card) ---------- */
+.card-media{
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-color: transparent;
+}
+.card-media:hover{
+  box-shadow: 0 30px 60px -22px rgba(11,31,58,0.45);
+  border-color: var(--orange);
+}
+.card-media-bg{
+  position: absolute; inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.card-media-bg img{
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 35%;
+  transition: transform .7s var(--ease);
+}
+.card-media:hover .card-media-bg img{
+  transform: scale(1.05);
+}
+
+/* floating glass panel — does not span full width/height, image stays visible on all sides */
+.card-media-panel{
+  position: absolute;
+  left: 20px; right: 20px; bottom: 20px;
+  z-index: 2;
+  width: auto;
+  max-width: 68%;
+  padding: 20px 22px 22px;
+  background: rgba(11,31,58,0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.20);
+  box-shadow: 0 20px 40px -16px rgba(11,31,58,0.55);
+  transition: background .35s var(--ease), box-shadow .35s var(--ease);
+}
+.card-media:hover .card-media-panel{
+  background: rgba(17,42,78,0.5);
+  box-shadow: 0 24px 48px -14px rgba(11,31,58,0.6);
+}
+.card-media-panel .icon{
+  width: 42px; height: 42px; border-radius: 4px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.16);
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+.card-media-panel .icon svg{ width: 21px; height: 21px; }
+.card-media-panel h3{
+  color: #fff; margin-bottom: 6px; font-size: 16.5px;
+}
+.card-media-panel p{
+  color: rgba(255,255,255,0.75); font-size: 13px; margin: 0; line-height: 1.5;
+}
+
+@media (max-width: 620px){
+  .card-media-panel{ max-width: 82%; }
+}
+
 /* ---------- Stats ---------- */
 .stats-band{
   background: var(--navy); color:#fff; padding: 70px 0;

@@ -360,34 +360,47 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
 .logo-track .logo-item:hover{ opacity:1; color: var(--orange); }
 .logo-track .logo-item .dot{ width:6px; height:6px; background: var(--orange); border-radius:50%; }
 
-/* ---------- Client Logo Marquee ---------- */
+/* =========================================================
+   CLIENT LOGO MARQUEE (BULLETPROOF) 
+   ========================================================= */
 .marquee-container {
-  overflow: hidden;
-  width: 100%;
-  padding: 20px 0;
-  white-space: nowrap;
+  overflow: hidden !important;
+  width: 100% !important;
+  padding: 20px 0 !important;
+  white-space: nowrap !important;
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
+
 .marquee-track {
-  display: flex;
-  width: max-content;
-  gap: 24px;
-  animation: scroll-left 25s linear infinite;
+  display: flex !important;
+  flex-direction: row !important; /* Force a horizontal line */
+  flex-wrap: nowrap !important;  /* Never allow wrapping */
+  width: max-content !important; 
+  gap: 24px !important;
+  animation: scroll-left 25s linear infinite !important; /* Forces animation */
 }
+
 .marquee-track:hover {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
 }
-.client-logo-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 180px;
+
+.marquee-track .client-logo-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 250px !important;  /* Locks width so mobile grid logic doesn't override */
+  height: 120px !important;
+  flex-shrink: 0 !important; /* Absolutely prevents stacking or squishing */
+  margin: 0 !important;
 }
-.client-logo {
-  max-width: 100%;
-  height: auto;
+
+.marquee-track .client-logo {
+  max-width: 80% !important;
+  max-height: 80% !important;
+  object-fit: contain !important;
 }
+
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
@@ -396,6 +409,7 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
     transform: translateX(calc(-50% - 12px));
   }
 }
+/* ========================================================= */
 
 /* ---------- CTA banner ---------- */
 .cta-banner{

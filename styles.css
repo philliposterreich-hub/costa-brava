@@ -505,15 +505,15 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   .hero-scroll{ display:none; }
 }
 /* =========================================================
-   PREMIUM SERVICE CARD PROTOTYPE (HVAC) - SIZE FIXED
+   PREMIUM SERVICE CARD PROTOTYPE (HVAC) - COMPACT SIZE
    ========================================================= */
 .service-image-card {
   position: relative !important;
   overflow: hidden !important;
   padding: 0 !important; 
-  height: 340px !important; /* Strict height to prevent vertical stretching */
-  /* If the card is still stretching entirely across the screen horizontally, uncomment the next line: */
-  /* max-width: 380px !important; */ 
+  height: 380px !important; /* Fixed card height */
+  width: 100% !important;
+  max-width: 340px !important; /* Forces it to stay a small card */
   border-radius: var(--radius, 12px) !important;
   border: 1px solid var(--divider, #e0e0e0) !important;
   background: var(--navy, #0B1F3A) !important;
@@ -521,6 +521,8 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   flex-direction: column !important;
   justify-content: flex-end !important;
   transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease !important;
+  /* Optional: centers the card if the container tries to stretch it */
+  margin-right: auto !important; 
 }
 
 .service-image-card .card-bg-media {

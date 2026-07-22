@@ -505,15 +505,15 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   .hero-scroll{ display:none; }
 }
 /* =========================================================
-   PREMIUM SERVICE CARD PROTOTYPE (HVAC) - COMPACT SIZE
+   PREMIUM SERVICE CARD PROTOTYPE (HVAC) - FINAL PROPORTIONS
    ========================================================= */
 .service-image-card {
   position: relative !important;
   overflow: hidden !important;
   padding: 0 !important; 
-  height: 380px !important; /* Fixed card height */
+  height: 420px !important; /* Slightly taller so the image has more room */
   width: 100% !important;
-  max-width: 340px !important; /* Forces it to stay a small card */
+  max-width: 340px !important; /* Keeps it as a compact card */
   border-radius: var(--radius, 12px) !important;
   border: 1px solid var(--divider, #e0e0e0) !important;
   background: var(--navy, #0B1F3A) !important;
@@ -521,25 +521,23 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   flex-direction: column !important;
   justify-content: flex-end !important;
   transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease !important;
-  /* Optional: centers the card if the container tries to stretch it */
   margin-right: auto !important; 
 }
 
+/* Updated to handle CSS background-image instead of an <img> tag */
 .service-image-card .card-bg-media {
   position: absolute !important;
   inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
   z-index: 1 !important;
-}
-
-.service-image-card .card-bg-media img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
   transition: transform 0.6s ease !important;
 }
 
+/* Compacted Glass Panel */
 .service-glass-panel {
   position: relative !important;
   z-index: 2 !important;
@@ -547,37 +545,44 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-top-left-radius: 12px !important;
-  border-top-right-radius: 12px !important;
-  padding: 24px !important;
+  padding: 16px 20px !important; /* Reduced padding so it takes less space */
   color: #FFFFFF !important;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2) !important;
   transition: background 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important; /* Tighter spacing between elements */
 }
 
+/* Smaller Icon */
 .service-glass-panel .icon {
-  width: 44px !important;
-  height: 44px !important;
+  width: 36px !important;
+  height: 36px !important;
   border-radius: 4px !important;
   background: rgba(245, 130, 32, 0.15) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  margin-bottom: 14px !important;
   color: var(--orange, #F58220) !important; 
 }
 
-.service-glass-panel h3 {
-  color: #FFFFFF !important;
-  font-size: 18px !important;
-  margin-bottom: 8px !important;
+.service-glass-panel .icon svg {
+  width: 20px !important;
+  height: 20px !important;
 }
 
-.service-glass-panel p {
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-size: 13.5px !important;
+.service-glass-panel .panel-text h3 {
+  color: #FFFFFF !important;
+  font-size: 16px !important; /* Slightly smaller text */
+  margin: 0 0 6px 0 !important;
+  line-height: 1.2 !important;
+}
+
+.service-glass-panel .panel-text p {
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-size: 13px !important;
   margin: 0 !important;
-  line-height: 1.4 !important;
+  line-height: 1.35 !important;
 }
 
 /* Hover States */
@@ -587,7 +592,8 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   box-shadow: 0 20px 40px -20px rgba(11, 31, 58, 0.4) !important;
 }
 
-.service-image-card:hover .card-bg-media img {
+/* Now scaling the div itself instead of the img tag */
+.service-image-card:hover .card-bg-media {
   transform: scale(1.05) !important;
 }
 

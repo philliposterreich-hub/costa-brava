@@ -95,15 +95,27 @@
     </div>
     <div class="grid-3 reveal reveal-stagger">
       
-     <!-- Premium Engineering Card: HVAC -->
-      <div class="card premium-card" style="--i:0">
-        <img src="hvac.jpg" alt="HVAC" class="card-bg-img">
-        <div class="glass-panel">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></div>
-          <h3>Вентиляция и кондиционирование</h3>
-          <p>Отопление, вентиляция и кондиционирование для зданий любого назначения.</p>
-        </div>
-      </div>
+    <div className="hvac-card">
+  <div className="hvac-image-container">
+    
+    <img src="/images/hvac-worker.jpg" alt="Worker checking AC unit" className="hvac-image" />
+  </div>
+  
+  <div className="hvac-content">
+    <div className="hvac-icon">
+      {/* Orange pulse icon matching the design */}
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+      </svg>
+    </div>
+    
+    <h3 className="hvac-title">Вентиляция и кондиционирование</h3>
+    
+    <p className="hvac-description">
+      Отопление, вентиляция и кондиционирование для зданий любого назначения.
+    </p>
+  </div>
+</div>
       <div class="card" style="--i:1">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
         <h3>Электромонтаж</h3>

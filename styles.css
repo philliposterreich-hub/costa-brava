@@ -273,7 +273,7 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
 .section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:40px; margin-bottom: 54px; }
 .section-head .side{ max-width: 380px; }
 
-/* ---------- Cards ---------- */
+/* ---------- Cards (Standard) ---------- */
 .card{
   background: var(--surface); border: 1px solid var(--divider);
   padding: 34px 28px; border-radius: var(--radius);
@@ -291,6 +291,68 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
 .card ul{ margin-top:14px; }
 .card ul li{ font-size: 14px; color: var(--text-soft); padding: 6px 0; border-top: 1px dashed var(--divider); }
 .card ul li:first-child{ border-top:none; }
+
+/* ---------- Premium Engineering Cards (MEP Overrides) ---------- */
+.card.premium-card {
+  padding: 24px;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: transparent;
+}
+.card.premium-card:hover {
+  transform: translateY(-8px); 
+  border-color: var(--orange);
+}
+.card.premium-card .card-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.6s var(--ease);
+}
+.card.premium-card:hover .card-bg-img {
+  transform: scale(1.05);
+}
+.card.premium-card .glass-panel {
+  position: relative;
+  z-index: 2;
+  width: 55%; 
+  background: rgba(8, 22, 47, 0.42); 
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18); 
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); 
+  transition: background 0.4s var(--ease);
+}
+.card.premium-card:hover .glass-panel {
+  background: rgba(8, 22, 47, 0.52);
+}
+.card.premium-card .glass-panel .icon {
+  background: transparent;
+  margin: 0 0 12px 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  justify-content: flex-start;
+  color: var(--orange);
+}
+.card.premium-card .glass-panel h3 {
+  font-size: 20px; 
+  font-weight: 700; 
+  color: #ffffff; 
+  margin-bottom: 6px;
+}
+.card.premium-card .glass-panel p {
+  font-size: 14px; 
+  color: #e2e8f0; 
+  margin: 0;
+}
 
 /* ---------- Stats ---------- */
 .stats-band{
@@ -374,11 +436,11 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
 
 .marquee-track {
   display: flex !important;
-  flex-direction: row !important; /* Force a horizontal line */
-  flex-wrap: nowrap !important;  /* Never allow wrapping */
+  flex-direction: row !important; 
+  flex-wrap: nowrap !important;  
   width: max-content !important; 
   gap: 24px !important;
-  animation: scroll-left 25s linear infinite !important; /* Forces animation */
+  animation: scroll-left 25s linear infinite !important; 
 }
 
 .marquee-track:hover {
@@ -389,9 +451,9 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 250px !important;  /* Locks width so mobile grid logic doesn't override */
+  width: 250px !important;  
   height: 120px !important;
-  flex-shrink: 0 !important; /* Absolutely prevents stacking or squishing */
+  flex-shrink: 0 !important; 
   margin: 0 !important;
 }
 
@@ -487,6 +549,9 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   .stats-grid{ grid-template-columns: repeat(3,1fr); row-gap: 30px; }
   .footer-grid{ grid-template-columns: 1fr 1fr; }
   .adv-list{ grid-template-columns: 1fr; }
+  
+  /* Make sure premium cards expand nicely on mid-sizes */
+  .card.premium-card .glass-panel { width: 75%; }
 }
 @media (max-width: 860px){
   .nav-links{ display:none; }
@@ -496,6 +561,9 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   section{ padding: 70px 0; }
   .section-head{ flex-direction:column; align-items:flex-start; gap: 16px; }
   .form-grid{ grid-template-columns: 1fr; }
+  
+  /* Make sure glass panels don't get squished */
+  .card.premium-card .glass-panel { width: 85%; }
 }
 @media (max-width: 620px){
   .grid-3{ grid-template-columns: 1fr; }
@@ -503,4 +571,8 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   .footer-grid{ grid-template-columns: 1fr; }
   .footer-bottom{ flex-direction:column; align-items:flex-start; }
   .hero-scroll{ display:none; }
+
+  /* Fully expand panels on mobile */
+  .card.premium-card .glass-panel { width: 100%; }
+  .card.premium-card { min-height: 380px; }
 }

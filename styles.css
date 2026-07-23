@@ -576,3 +576,56 @@ html[data-theme="dark"] .burger.open span{ background:#fff; }
   .card.premium-card .glass-panel { width: 100%; }
   .card.premium-card { min-height: 380px; }
 }
+
+/* --- HVAC Card Specific Styles --- */
+
+.hvac-card {
+  background-color: #121e31; /* Matches the dark blue card background */
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #1f2d40; /* Subtle border to separate from the main background */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hvac-image-container {
+  width: 100%;
+  height: 180px; /* Adjust this to match your grid's proportions */
+  overflow: hidden;
+}
+
+.hvac-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hvac-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hvac-icon {
+  margin-bottom: 8px;
+}
+
+.hvac-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+  font-family: sans-serif;
+}
+
+.hvac-description {
+  color: #9ab3cd; /* Muted light blue/gray text color */
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  font-family: sans-serif;
+}
